@@ -42,4 +42,12 @@ export class FirebaseService{
     addCategory(newCategory){
         return this.categories.push(newCategory);
     }
+
+    updateBusiness(key, updatedBusiness){
+        return this.businesses.update(key, updatedBusiness);
+    }
+
+    deleteBusiness(key){
+        return this.businesses.remove(key);
+    }
 }
