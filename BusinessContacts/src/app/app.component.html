@@ -12,13 +12,26 @@
 </div>
 <br />
 
+<div class="row">
+  <div class="large-6 columns">
+    <button class="button">Add Business</button>
+  </div>
+  <div class="large-6 columns">
+    <label>Filter Category
+      <select (change)="filterCategory(filteredCategory.value)" #filteredCategory>
+        <option value="0">Select</option>
+        <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
+      </select>
+    </label>
+  </div>
+</div>
+
 <div *ngIf="appState == 'extend'">
   <div class="row">
     <div class="large-12 columns">
       <button class="button alert" (click)="changeState('default')">Go Back</button>
     </div>
   </div>
-
 
   <div *ngFor="let business of businesses">
     <div *ngIf="business.$key == activeKey">
