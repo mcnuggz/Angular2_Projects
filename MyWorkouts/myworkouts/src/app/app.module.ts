@@ -4,9 +4,9 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { WorkoutsPage } from '../pages/workouts/workouts';
+import { AddWorkoutPage } from '../pages/add-workout/add-workout'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,9 +15,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    AddWorkoutPage,
+    TabsPage,
+    WorkoutsPage
   ],
   imports: [
     BrowserModule,
@@ -27,9 +27,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    TabsPage,
+    AddWorkoutPage,
+    WorkoutsPage
   ],
   providers: [
     StatusBar,
