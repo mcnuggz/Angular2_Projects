@@ -7,5 +7,15 @@
 </ion-header>
 
 <ion-content padding>
-    Workout Details
+    <ion-card>
+        <ion-card-header>
+            <strong>{{workout.title}}</strong>
+        </ion-card-header>
+        <ion-card-content>
+            <p><strong>Type: </strong>{{workout.type}}</p>
+            <hr />
+            {{workout.note}}
+            <br /><br /><br />
+        </ion-card-content>
+    </ion-card>
 </ion-content>
