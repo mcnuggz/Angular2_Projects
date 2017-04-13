@@ -26,4 +26,8 @@ export class WorkoutService {
         headers.append('Content-Type', 'application/json');
         return this.http.post(this.workoutUrl + '?apiKey=' + this.apiKey, JSON.stringify(workout), {headers: headers}).map(res => res.json());
     }
+
+    deleteWorkout(workoutId){
+        return this.http.delete(this.workoutUrl+'/'+workoutId+'?apiKey='+this.apiKey).map(res => res.json());
+    }
 }
