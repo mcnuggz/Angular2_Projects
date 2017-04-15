@@ -1,0 +1,5 @@
+npm install -g ionic cordova
+ionic start myWeather --v2
+cd myWeater
+ionic serve
+wunderland api key id: c4c7c26b5f9441f4
