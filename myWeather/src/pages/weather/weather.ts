@@ -9,6 +9,7 @@ import {WeatherService} from '../../app/services/weather.service';
 export class WeatherPage {
   city: string;
   state: string;
+  weather: any;
 
   constructor(public navCtrl: NavController, private weatherService: WeatherService) {
     this.city = 'St. Louis';
@@ -17,7 +18,7 @@ export class WeatherPage {
 
   ngOnInit(){
     this.weatherService.getWeather(this.city, this.state).subscribe(weather => {
-      console.log(weather);
+      this.weather = weather.current_observation;
     });
   }
 
