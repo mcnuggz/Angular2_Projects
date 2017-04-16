@@ -7,19 +7,22 @@ import {WeatherService} from '../../app/services/weather.service';
   templateUrl: 'weather.html'
 })
 export class WeatherPage {
-  city: string;
-  state: string;
+  zmw: any;
   weather: any;
   searchStr: string;
   results: any;
 
   constructor(public navCtrl: NavController, private weatherService: WeatherService) {
-    this.city = 'St. Louis';
-    this.state = 'MO';
+
+  }
+
+  getDefaultLocation(){
+    this.zmw = '63101.1.99999';
   }
 
   ngOnInit(){
-    this.weatherService.getWeather(this.city, this.state).subscribe(weather => {
+    this.getDefaultLocation();
+    this.weatherService.getWeather(this.zmw).subscribe(weather => {
       this.weather = weather.current_observation;
     });
   }
@@ -27,6 +30,13 @@ export class WeatherPage {
   getQuery(){
     this.weatherService.searchCities(this.searchStr).subscribe(res => {
       this.results = res.RESULTS;
+    });
+  }
+
+  chooseLocation(location){
+      this.results = [];
+      this.weatherService.getWeather(location.zmw).subscribe(weather => {
+      this.weather = weather.current_observation;
     });
   }
 
