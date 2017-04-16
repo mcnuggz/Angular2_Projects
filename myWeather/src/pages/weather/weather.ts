@@ -17,7 +17,11 @@ export class WeatherPage {
   }
 
   getDefaultLocation(){
-    this.zmw = '63101.1.99999';
+    if(localStorage.getItem('location') !== undefined){
+      this.zmw = JSON.parse(localStorage.getItem('location')).zmw;
+    } else {
+      this.zmw = '63101.1.99999';
+    }
   }
 
   ngOnInit(){
